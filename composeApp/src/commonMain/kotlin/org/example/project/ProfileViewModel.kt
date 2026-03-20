@@ -17,15 +17,14 @@ class ProfileViewModel {
         _uiState.update { it.copy(isEditing = isEditing) }
     }
 
-    // Fungsi save sekarang menerima 5 parameter
     fun saveProfile(newName: String, newBio: String, newEmail: String, newPhone: String, newLocation: String) {
         _uiState.update {
             it.copy(
                 name = newName,
                 bio = newBio,
-                email = newEmail,       // Simpan email baru
-                phone = newPhone,       // Simpan HP baru
-                location = newLocation, // Simpan lokasi baru
+                email = newEmail,       
+                phone = newPhone,       
+                location = newLocation, 
                 isEditing = false
             )
         }
