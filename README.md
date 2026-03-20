@@ -1,48 +1,43 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
+# My Profile App
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Aplikasi **My Profile App** adalah sebuah aplikasi kartu nama digital interaktif yang dibangun menggunakan **Compose Multiplatform (Kotlin)**. Aplikasi ini dikembangkan sebagai bagian dari tugas praktikum Pengembangan Aplikasi Mobile (Minggu 4), dengan fokus utama pada penerapan arsitektur modern Android.
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## Fitur Utama
 
-### Build and Run Android Application
+Aplikasi ini tidak hanya menampilkan antarmuka yang statis, tetapi juga dilengkapi dengan berbagai fitur dinamis yang diatur menggunakan arsitektur pemisahan *concern* yang baik:
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+1. **Arsitektur MVVM (Model-View-ViewModel)**
+   - Menggunakan `ProfileViewModel` untuk memisahkan logika aplikasi dari tampilan (UI).
+   - Memanfaatkan `StateFlow` untuk mengamati dan memperbarui *state* UI secara *real-time*.
+   - Menerapkan *Data Class* `ProfileUiState` sebagai wadah penyimpan status (*Single Source of Truth*).
 
-### Build and Run Desktop (JVM) Application
+2. **Fitur Edit Profil (State Hoisting)**
+   - Pengguna dapat memperbarui informasi profil secara langsung dari dalam aplikasi.
+   - Kolom isian yang dapat diubah meliputi: Nama Lengkap, Deskripsi (Bio), Email, Nomor Telepon, dan Lokasi.
+   - Menerapkan konsep *State Hoisting* pada komponen `TextField` untuk mengelola input sebelum disimpan atau dibatalkan.
 
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
+3. **Dark Mode Toggle (Tema Dinamis)**
+   - Dilengkapi dengan *Switch* interaktif untuk beralih antara Mode Terang (*Light Mode*) dan Mode Gelap (*Dark Mode*).
+   - Seluruh komponen UI (latar belakang, teks, ikon, dan kartu) akan beradaptasi secara otomatis mengikuti tema yang dipilih.
 
-### Build and Run iOS Application
+## Cara Penggunaan
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+1. **Melihat Profil:** Saat aplikasi pertama kali dibuka, layar akan menampilkan kartu profil lengkap dengan informasi kontak.
+2. **Mengganti Tema:** Klik *toggle/switch* di bagian atas layar untuk mengubah tampilan aplikasi menjadi Mode Gelap atau Mode Terang.
+3. **Mengedit Data:** - Tekan tombol **"Edit Profile"** di bagian bawah kartu.
+   - Layar akan berubah menjadi *Form* pengisian data.
+   - Ketikkan informasi baru yang diinginkan, kemudian tekan **"Simpan"** untuk menerapkan perubahan, atau **"Batal"** untuk kembali ke tampilan awal tanpa menyimpan.
+
+## Preview Aplikasi
+
+Berikut adalah tangkapan layar (screenshot) dari aplikasi My Profile App:
+
+| Tampilan Utama (Mode Terang) | Tampilan Utama (Mode Gelap) |
+| :---: | :---: |
+| ![Light Mode View](https://github.com/user-attachments/assets/597d5455-2292-40c2-bbe2-9c1cd019eed1) | ![Dark Mode View](https://github.com/user-attachments/assets/c6372186-5d29-4a63-92a0-5711f5142c59) |
+
+| Form Edit (Mode Terang) | Form Edit (Mode Gelap) |
+| :---: | :---: |
+| ![Light Mode Edit](https://github.com/user-attachments/assets/033161ec-5feb-41e4-8c9f-199839f4214d) | ![Dark Mode Edit](https://github.com/user-attachments/assets/1cade380-738c-4c27-859d-f5ae6e834c07) |
 
 ---
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
