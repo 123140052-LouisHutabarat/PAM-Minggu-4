@@ -67,9 +67,9 @@ fun MyProfileApp(uiState: ProfileUiState, viewModel: ProfileViewModel) {
             EditProfileForm(
                 currentName = uiState.name,
                 currentBio = uiState.bio,
-                currentEmail = uiState.email,       // Mengambil state email
-                currentPhone = uiState.phone,       // Mengambil state HP
-                currentLocation = uiState.location, // Mengambil state lokasi
+                currentEmail = uiState.email,       
+                currentPhone = uiState.phone,      
+                currentLocation = uiState.location, 
                 isDarkMode = uiState.isDarkMode,
                 onSave = { name, bio, email, phone, location ->
                     viewModel.saveProfile(name, bio, email, phone, location)
@@ -81,9 +81,9 @@ fun MyProfileApp(uiState: ProfileUiState, viewModel: ProfileViewModel) {
                 ProfileCard(
                     name = uiState.name,
                     bio = uiState.bio,
-                    email = uiState.email,       // Menampilkan state email
-                    phone = uiState.phone,       // Menampilkan state HP
-                    location = uiState.location, // Menampilkan state lokasi
+                    email = uiState.email,       
+                    phone = uiState.phone,       
+                    location = uiState.location, 
                     isDarkMode = uiState.isDarkMode,
                     onEditClick = { viewModel.setEditingMode(true) }
                 )
@@ -104,7 +104,6 @@ fun EditProfileForm(
     onCancel: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    // State Hoisting untuk 5 inputan
     var nameInput by remember { mutableStateOf(currentName) }
     var bioInput by remember { mutableStateOf(currentBio) }
     var emailInput by remember { mutableStateOf(currentEmail) }
@@ -122,7 +121,6 @@ fun EditProfileForm(
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = cardColor)
     ) {
-        // Menambahkan verticalScroll agar bisa digeser jika layar kepenuhan
         Column(
             modifier = Modifier.padding(16.dp).verticalScroll(rememberScrollState())
         ) {
