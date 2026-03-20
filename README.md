@@ -1,6 +1,6 @@
-# My Profile App
+# My Profile App 
 
-Aplikasi **My Profile App** adalah sebuah aplikasi kartu nama digital interaktif yang dibangun menggunakan **Compose Multiplatform (Kotlin)**. Aplikasi ini dikembangkan sebagai bagian dari tugas praktikum Pengembangan Aplikasi Mobile (Minggu 4), dengan fokus utama pada penerapan arsitektur modern Android.
+Aplikasi **My Profile App** adalah sebuah aplikasi halaman profil interaktif yang dibangun menggunakan **Compose Multiplatform (Kotlin)**. Aplikasi ini dikembangkan sebagai bagian dari tugas Pengembangan Aplikasi Mobile (Minggu 4), dengan fokus utama pada penerapan arsitektur modern Android.
 
 ## Fitur Utama
 
@@ -18,13 +18,13 @@ Aplikasi ini tidak hanya menampilkan antarmuka yang statis, tetapi juga dilengka
 
 3. **Dark Mode Toggle (Tema Dinamis)**
    - Dilengkapi dengan *Switch* interaktif untuk beralih antara Mode Terang (*Light Mode*) dan Mode Gelap (*Dark Mode*).
-   - Seluruh komponen UI (latar belakang, teks, ikon, dan kartu) akan beradaptasi secara otomatis mengikuti tema yang dipilih.
+   - Seluruh komponen UI (latar belakang, teks, ikon, dan area profil) akan beradaptasi secara otomatis mengikuti tema yang dipilih.
 
 ## Cara Penggunaan
 
-1. **Melihat Profil:** Saat aplikasi pertama kali dibuka, layar akan menampilkan kartu profil lengkap dengan informasi kontak.
+1. **Melihat Profil:** Saat aplikasi pertama kali dibuka, layar akan menampilkan halaman profil lengkap dengan informasi kontak.
 2. **Mengganti Tema:** Klik *toggle/switch* di bagian atas layar untuk mengubah tampilan aplikasi menjadi Mode Gelap atau Mode Terang.
-3. **Mengedit Data:** - Tekan tombol **"Edit Profile"** di bagian bawah kartu.
+3. **Mengedit Data:** - Tekan tombol **"Edit Profile"** di bagian bawah halaman profil.
    - Layar akan berubah menjadi *Form* pengisian data.
    - Ketikkan informasi baru yang diinginkan, kemudian tekan **"Simpan"** untuk menerapkan perubahan, atau **"Batal"** untuk kembali ke tampilan awal tanpa menyimpan.
 
