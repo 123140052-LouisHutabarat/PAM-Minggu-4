@@ -1,1 +1,0 @@
-# PAM-Minggu-4
